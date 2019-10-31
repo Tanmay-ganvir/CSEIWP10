@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function validateForm() 
+    {
+        var  firstname = document.forms["form1"]["firstname"].value;
+        var  lastname = document.forms["form1"]["lastname"].value; 
+        var  mobile = document.forms["form1"]["mobile"].value;
+        var  email = document.forms["form1"]["emailid"].value;
+        var  pincode = document.forms["form1"]["pincode"].value;   
+        var  address = document.forms["form1"]["address"].value;
+        var  donation = document.forms["form1"]["donation"].value;
+        var  radio = document.forms["form1"]["name"].value;
+        if (firstname == "") 
+        {
+        alert("First name must be filled out");
+
+        }
+        if (mobile == "")
+        {
+          alert ("Mobile number must be filled out");
+        }
+        else if (isNaN(mobile)|| mobile<999999999||mobile>=10000000000) 
+        {
+        alert("Mobile number is invalid");
+        }
+        if(email == "")
+        {
+          alert ("Email must be filled out ");
+        }
+        else if ((email.indexOf(".")-email.indexOf("@"))<2) 
+        {
+        alert("Email id is invalid");
+        }
+        if(pincode == "")
+        {
+          alert ("Pincode be filled out");
+        } 
+        else if (isNaN(pincode)) 
+        {
+        alert("Pincode is valid");
+        }
+         if (address == "") 
+        {
+        alert("Address must be filled out");
+        }
+        if (donation =="none")
+        {
+         alert("Select a type of donation");
+        }
+        else if (donation == "Other")
+        {
+            document.getElementById("").innerHTML
+        }
+        if (radio == "")
+        {
+           alert("Select yes or no for name");
+        }
+    }
+    </script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Scrapickp</title>
+	<link rel="stylesheet" type="text/css" href="donate1.css">
+	<link rel="shortcut icon" type="image/png" href="http://newforestmetalrecycling.co.uk/wp-content/uploads/2019/07/truck-icon.png">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdafPtaYM8b6XWHZVx0JVa-EME7a1MU9nhgwUmorZSbH3csSpl" class="logo"></a>
+		<div class="menu-toggle"></div>
+		<nav>
+			<ul>
+				<li><a href="#" class="active">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Rate Card</a></li>
+				<li><a href="#">Sign Up/Log In </a></li>
+			</ul>
+		</nav>
+		<div class="searchbox">
+			<input class="searchtext" type="text" name="" placeholder="Type to Search">
+			<a class="searchbtn" href="#"></a>
+			<i class="fa fa-search" aria-hidden="true"></i>
+		</div>
+		<div class="clearfix"></div>
+	</header>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		$('.menu-toggle').click(function(){
+    			$('.menu-toggle').toggleClass('active')
+    			$('nav').toggleClass('active')
+    		})
+    	})
+    </script>
+    <!--do whatever you wanna do in this page here only.. don't touch anything else apart from here-->
+    <div class="home">
+    	<div class="heading1"><center><span class="heading1a" style="color: white;">Hey</span><span class="heading1b" style="color: green;">Donor</span><span class="heading1a" style="color: white;">!</span></center></div>
+        <div class="quote1"><blockquote><i>Make a difference: be a part of our next initiative.</i></blockquote></div>
+    <div>
+        <form class="form1" name="form1">
+          <p style="color: red">-terms starting with '*' are mandatory</p>
+          <span class="firstname">First Name*</span><br>
+          <input class="inputformfn" type="text" name="firstname" value="">
+          <br><br><br>
+         <span class="lastname">Last Name</span><br>
+          <input class="inputformln" type="text" name="lastname" value="">
+          <br><br><br>
+          <span class="mobile">Mobile Number*</span><br>
+          <input class="inputformmn" type="text" name="mobile" value="">
+          <br><br><br>
+          <span class="emailid">Email id*</span><br>
+          <input class="inputformei" type="Email" name="emailid" value="" placeholder="name@example.com">
+          <br><br><br>
+           <span class="pincode">Pin Code*</span><br>
+          <input class="inputformei" type="text" name="pincode" value="">
+          <br><br><br>
+          <span class="address">Address*</span><br>
+          <textarea class="inputformadd" name="address" placeholder="" style="height:150px"></textarea>
+          <br><br><br>
+          <span class="firstname">Thing you want to donate* :-</span><br>
+          <select name="donation" class="donation">
+            <option value="none">---select---</option>
+    <option value="opt1">Clothes</option>
+    <option value="opt2">Stationary</option>
+    <option value="opt3">Food Items</option>
+    <option value="opt4">Other</option>
+  </select>
+          <input style="margin-top: 10px;" class="inputformei" id="txt" type="text" name="Other" placeholder="if u want to put any other items" >
+          <br><br><br>
+          <div></div>
+          <span class="firstname">Upload image*</span><br>
+              <input class="inputimg" type="file" name="fileToUpload" id="fileToUpload">
+          <br><br><br>
+          <span class="firstname">Do you want your name to be uploaded on the website ?</span><br><br>
+          <span style="padding-right: 20px;"><input type="radio" name="name" value="yes">Yes</span>
+          <input type="radio" name="name" value="no"> No <br><br><br>
+          <button class="checker" onclick="return validateForm()">Check</button>
+         <input type="submit" value="Submit" name="Submit">
+        </form> 
+    </div>
+    </div>
+    <br><br><br>
+    <div class="proud" style="color: white;">Here , is the list of our proud donors . <br>To see the list <a href="#">Click here!</a> </div><br><br><br>S
+    <!--do whatever you wanna do in this page here only.. don't touch anything else apart from here-->
+    <div class="footer">
+    	<div class="footercontent">
+
+    		<div class="footerservices">
+    			<h2>Services</h2>
+    			<p>Scrap Pickup</p>
+    			<p>Company Tie-up</p>
+    			<p>Join as Vendor</p>
+    		</div>
+
+    		<div class="footersupport">
+    			<h2>Support</h2>
+    			<p>Help & FAQ</p>
+    			<p>Contact Us</p>
+    			<div class="Contact">
+                    <i class="fa fa-phone" aria-hidden="true">   8825882588</i><br>
+                    <i class="fa fa-envelope" aria-hidden="true">   example@gmail.com</i>
+    			</div>
+    		</div>
+
+    		<div class="footercompany">
+    			<h2>Company</h2>
+    			<p>About Us</p>
+    			<p>How it Works</p>
+    		</div>
+
+    		<div class="footerourratecard">
+    			<h2>Our Ratecard</h2>
+    			<p>Scrap Ratecard</p>
+    			<p>Ratecard Calculater</p>
+    		</div>
+
+    		<div class="footersociallinks">
+                <dir class="footerdownloads">
+                    <div class="footergoogleplay">
+                        <img src="https://play.google.com/intl/en_us/badges/images/badge_new.png" width="120px" height="42px">
+                    </div>
+                    <dir class="footerappstore">
+                        <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" width="120px" height="42px">
+                    </dir>
+                </dir>
+                <dir class="footersocialmediaicons">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+                </dir>
+    		</div>
+    	</div>
+        <dir class="footerbottom">
+            <div class="footercopyright">
+                <p><b>Copyright &copy; 2019 TechTeam VNIT All rights reserved</b></p>
+            </div>
+            <div class="footerprivacy">
+                <p><b>Privacy Policy | Terms and Conditions</b></p>
+            </div>
+        </dir>
+    </div>
+</body>
+</html>
